@@ -6,3 +6,4 @@ public interface EntityFactory<T extends BaseEntity> {
 
     T create(Object... args);
 }
+

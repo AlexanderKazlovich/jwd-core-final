@@ -24,7 +24,7 @@ public enum Rank implements BaseEntity {
      */
     @Override
     public String getName() {
-        return null;
+        return this.toString();
     }
 
     /**
@@ -33,6 +33,10 @@ public enum Rank implements BaseEntity {
      * @throws UnknownEntityException if such id does not exist
      */
     public static Rank resolveRankById(int id) {
-        return null;
+        if (id == 1) return TRAINEE;
+        if (id == 2) return SECOND_OFFICER;
+        if (id == 3) return FIRST_OFFICER;
+        if (id == 4) return CAPTAIN;
+        else throw new UnknownEntityException("id does not exist");
     }
 }

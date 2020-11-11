@@ -24,7 +24,7 @@ public enum Role implements BaseEntity {
      */
     @Override
     public String getName() {
-        return null;
+        return this.toString();
     }
 
     /**
@@ -32,6 +32,10 @@ public enum Role implements BaseEntity {
      * @throws UnknownEntityException if such id does not exist
      */
     public static Role resolveRoleById(int id) {
-        return null;
+        if (id == 1) return Role.MISSION_SPECIALIST;
+        if (id == 2) return Role.FLIGHT_ENGINEER;
+        if (id == 3) return Role.PILOT;
+        if (id == 4) return Role.COMMANDER;
+        else throw new UnknownEntityException("id does not exist");
     }
 }

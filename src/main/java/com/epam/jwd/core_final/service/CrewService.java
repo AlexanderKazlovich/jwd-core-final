@@ -1,5 +1,6 @@
 package com.epam.jwd.core_final.service;
 
+import com.epam.jwd.core_final.criteria.CrewMemberCriteria;
 import com.epam.jwd.core_final.criteria.Criteria;
 import com.epam.jwd.core_final.domain.CrewMember;
 
@@ -18,6 +19,7 @@ public interface CrewService {
 
     Optional<CrewMember> findCrewMemberByCriteria(Criteria<? extends CrewMember> criteria);
 
+
     CrewMember updateCrewMemberDetails(CrewMember crewMember);
 
     // todo create custom exception for case, when crewMember is not able to be assigned
@@ -25,5 +27,7 @@ public interface CrewService {
 
     // todo create custom exception for case, when crewMember is not able to be created (for example - duplicate.
     // crewmember unique criteria - only name!
-    CrewMember createCrewMember(CrewMember spaceship) throws RuntimeException;
+    CrewMember createCrewMember(CrewMember crewMember) throws RuntimeException;
+
+    List<CrewMember> getCrewMemberList(List<Long> listOfId);
 }
