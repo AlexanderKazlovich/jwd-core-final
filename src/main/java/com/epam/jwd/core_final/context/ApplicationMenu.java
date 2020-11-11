@@ -82,6 +82,7 @@ public interface ApplicationMenu {
         }
         objects[3] = listOfId;
         FlightMissionFactory.getFlightMissionFactory().create(objects);
+        logger.info("Mission has created");
 
         checkForReinitialization();
         printAvailableOptions();

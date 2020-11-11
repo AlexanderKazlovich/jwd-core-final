@@ -1,6 +1,7 @@
 package com.epam.jwd.core_final.domain;
 
 import com.epam.jwd.core_final.factory.impl.CrewMemberFactory;
+import com.epam.jwd.core_final.util.PropertyReaderUtil;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -43,13 +44,13 @@ public final class ApplicationProperties {
     private final String dateTimeFormat;
 
     public ApplicationProperties() {
-        this.inputRootDir = properties.getProperty("inputRootDir");
-        this.outputRootDir = properties.getProperty("outputRootDir");
-        this.crewFileName =  properties.getProperty("crewFileName");;
-        this.missionsFileName =  properties.getProperty("missionsFileName");;
-        this.spaceshipsFileName =  properties.getProperty("spaceshipsFileName");;
-        this.fileRefreshRate =  Integer.parseInt(properties.getProperty("fileRefreshRate"));
-        this.dateTimeFormat =  properties.getProperty("dateTimeFormat");
+        this.inputRootDir = PropertyReaderUtil.getProperties().getProperty("inputRootDir");
+        this.outputRootDir = PropertyReaderUtil.getProperties().getProperty("outputRootDir");
+        this.crewFileName =  PropertyReaderUtil.getProperties().getProperty("crewFileName");;
+        this.missionsFileName =  PropertyReaderUtil.getProperties().getProperty("missionsFileName");;
+        this.spaceshipsFileName =  PropertyReaderUtil.getProperties().getProperty("spaceshipsFileName");;
+        this.fileRefreshRate =  Integer.parseInt(PropertyReaderUtil.getProperties().getProperty("fileRefreshRate"));
+        this.dateTimeFormat =  PropertyReaderUtil.getProperties().getProperty("dateTimeFormat");
     }
 
     public String getInputRootDir() {
