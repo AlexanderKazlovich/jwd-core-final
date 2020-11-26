@@ -1,11 +1,9 @@
 package com.epam.jwd.core_final.criteria;
 
 import com.epam.jwd.core_final.domain.*;
-
-import java.awt.*;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * Should be a builder for {@link com.epam.jwd.core_final.domain.FlightMission} fields
